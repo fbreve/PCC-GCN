@@ -55,7 +55,7 @@ def plot_stage3(dataset_name):
 
     # 15x7 is more compact for the wide matrices
     fig, axes = plt.subplots(2, 3, figsize=(15, 5))
-    fig.suptitle(f"{dataset_name.upper()} STAGE 3 - Acc Gain % (k-NN Mode vs. k)", 
+    fig.suptitle(f"{dataset_name.upper()} STAGE 3 - Accuracy Gain (pp) (k-NN Mode vs. k)", 
                  fontsize=14, fontweight='bold')
     axes_flat = axes.flatten()
 
@@ -81,7 +81,7 @@ def plot_stage3(dataset_name):
         
         sns.heatmap(matrix, annot=True, fmt=".2f", cmap="viridis", 
                     annot_kws={"size": 7}, ax=ax, square=False,
-                    cbar_kws={'label': 'Gain (%)', 'shrink': 1.0})
+                    cbar_kws={'label': 'Accuracy Gain (pp)', 'shrink': 1.0})
         ax.set_title(f"Noise {int(nr*100)}%", fontsize=10)
         ax.set_ylabel("k-NN Mode", fontsize=8)
         ax.set_xlabel("k", fontsize=8)
@@ -95,7 +95,7 @@ def plot_stage3(dataset_name):
     
     sns.heatmap(matrix_mean, annot=True, fmt=".2f", cmap="viridis", 
                 annot_kws={"size": 7}, ax=ax_mean, square=False,
-                cbar_kws={'label': 'Mean Gain (%)', 'shrink': 1.0})
+                cbar_kws={'label': 'Mean Accuracy Gain (pp)', 'shrink': 1.0})
     ax_mean.set_title("GLOBAL MEAN", fontsize=10)
     ax_mean.set_ylabel("k-NN Mode", fontsize=8)
     ax_mean.set_xlabel("k", fontsize=8)

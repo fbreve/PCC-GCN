@@ -47,7 +47,7 @@ def plot_stage2(dataset_name):
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     
     fig, axes = plt.subplots(2, 3, figsize=(18, 11))
-    fig.suptitle(f"{dataset_name.upper()} STAGE 2 - Acc Gain % ($\\tau_{{\\mathrm{{rem}}}}$ vs $\\tau_{{\\mathrm{{rel}}}}$)", 
+    fig.suptitle(f"{dataset_name.upper()} STAGE 2 - Accuracy Gain (pp) ($\\tau_{{\\mathrm{{rem}}}}$ vs $\\tau_{{\\mathrm{{rel}}}}$)", 
                  fontsize=16, fontweight='bold')
     axes_flat = axes.flatten()
 
@@ -63,7 +63,7 @@ def plot_stage2(dataset_name):
         
         sns.heatmap(matrix, annot=True, fmt=".2f", cmap="viridis", 
                     annot_kws={"size": 8}, ax=ax, square=False,
-                    cbar_kws={'label': 'Acc Gain (%)', 'shrink': 1.00})
+                    cbar_kws={'label': 'Accuracy Gain (pp)', 'shrink': 1.00})
         ax.set_title(f"Noise {int(nr*100)}%")
         ax.set_xlabel(r"$\tau_{\mathrm{rel}}$")
         ax.set_ylabel(r"$\tau_{\mathrm{rem}}$")
@@ -80,7 +80,7 @@ def plot_stage2(dataset_name):
     
     sns.heatmap(mean_matrix, annot=True, fmt=".2f", cmap="viridis", 
                 annot_kws={"size": 8}, ax=ax_mean, square=False,
-                cbar_kws={'label': 'Mean Acc Gain (%)', 'shrink': 1.00})
+                cbar_kws={'label': 'Mean Accuracy Gain (pp)', 'shrink': 1.00})
     ax_mean.set_title("GLOBAL MEAN")
     ax_mean.set_xlabel(r"$\tau_{\mathrm{rel}}$")
     ax_mean.set_ylabel(r"$\tau_{\mathrm{rem}}$")
